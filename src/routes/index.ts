@@ -5,7 +5,8 @@ const PATH_ROUTER = `${__dirname}/`;
 const router = Router();
 
 const cleanFileName = (fileName: string) => {
-  return fileName.replace('.ts', '');
+  const extension = fileName.endsWith('.ts') ? '.ts' : '.js';
+  return fileName.replace(extension, '');
 };
 
 readdirSync(PATH_ROUTER).filter((fileName) => {
