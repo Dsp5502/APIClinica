@@ -10,6 +10,9 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 app.use(router);
+app.get('/', (req, res) => {
+  return res.send('Hi');
+});
 db().then(() => console.log('DB connected'));
 
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
