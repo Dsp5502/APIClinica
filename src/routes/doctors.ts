@@ -27,11 +27,17 @@ router.get(
   getDoctors
 );
 
-router.get('/:id', getDoctor);
+router.get(
+  '/:id',
+  [checkJwt, checkPermissions(['USER_ROLE']), validateFields],
+  getDoctor
+);
 
 router.post(
   '/',
   [
+    checkJwt,
+    checkPermissions(['USER_ROLE']),
     check('firstName', 'El nombre es obligatorio')
       .not()
       .isEmpty()
@@ -57,6 +63,8 @@ router.post(
 router.put(
   '/:id',
   [
+    checkJwt,
+    checkPermissions(['USER_ROLE']),
     check('id', 'No es un ID válido').isMongoId(),
     check('id').custom(existsDoctorById),
     check('firstName', 'El nombre es obligatorio')
@@ -82,6 +90,8 @@ router.put(
 router.delete(
   '/:id',
   [
+    checkJwt,
+    checkPermissions(['USER_ROLE']),
     check('id', 'No es un ID válido').isMongoId(),
     check('id').custom(existsDoctorById),
     validateFields,

@@ -19,13 +19,23 @@ import { phoneNumberRegex } from '../utils/customRegex';
 
 const router = Router();
 
-router.get('/', [checkJwt, checkPermissions([]), validateFields], getPatients);
+router.get(
+  '/',
+  [checkJwt, checkPermissions(['USER_ROLE']), validateFields],
+  getPatients
+);
 
-router.get('/:id', getPatient);
+router.get(
+  '/:id',
+  [checkJwt, checkPermissions(['USER_ROLE']), validateFields],
+  getPatient
+);
 
 router.post(
   '/',
   [
+    checkJwt,
+    checkPermissions(['USER_ROLE']),
     check('name', 'El nombre es obligatorio')
       .not()
       .isEmpty()
@@ -62,6 +72,8 @@ router.post(
 router.put(
   '/:id',
   [
+    checkJwt,
+    checkPermissions(['USER_ROLE']),
     check('id', 'No es un ID válido').isMongoId(),
     check('id').custom(existsPatientById),
     check('name', 'El nombre es obligatorio')
@@ -96,6 +108,8 @@ router.put(
 router.delete(
   '/:id',
   [
+    checkJwt,
+    checkPermissions(['USER_ROLE']),
     check('id', 'No es un ID válido').isMongoId(),
     check('id').custom(existsPatientById),
     validateFields,

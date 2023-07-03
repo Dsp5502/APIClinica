@@ -15,7 +15,7 @@ const getSpecialtiesController = async (
   res: Response
 ): Promise<void> => {
   try {
-    const { limit = 5, skip = 0 } = req.query;
+    const { limit = 8, skip = 0 } = req.query;
     const query = { state: true };
     const result = await getAllSpecialties({
       query,
