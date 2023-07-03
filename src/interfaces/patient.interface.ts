@@ -18,4 +18,5 @@ export interface Pagination {
   query: {
     state: boolean;
   };
+  searchTerm: string;
 }

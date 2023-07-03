@@ -27,7 +27,12 @@ router.get(
 
 router.get(
   '/:id',
-  [checkJwt, checkPermissions(['USER_ROLE']), validateFields],
+  [
+    checkJwt,
+    checkPermissions(['USER_ROLE']),
+    check('id', 'No es un ID válido').isMongoId(),
+    validateFields,
+  ],
   getPatient
 );
 

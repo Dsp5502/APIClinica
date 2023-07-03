@@ -26,9 +26,14 @@ const getPatient = async ({ params }: Request, res: Response) => {
 
 const getPatients = async (req: Request, res: Response): Promise<void> => {
   try {
-    const { limit = 5, skip = 0 } = req.query;
+    const { limit = 5, skip = 0, searchTerm = '' } = req.query;
     const query = { state: true };
-    const result = await getAllPatients({ query, limit, skip } as Pagination);
+    const result = await getAllPatients({
+      query,
+      limit,
+      skip,
+      searchTerm,
+    } as Pagination);
     res.send(result);
   } catch (error) {
     if (error instanceof Error) handleHttp(res, error, 400);

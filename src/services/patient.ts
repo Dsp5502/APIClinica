@@ -14,11 +14,29 @@ const getAllPatients = async ({
   query,
   limit,
   skip,
+  searchTerm,
 }: Pagination): Promise<PatientsResult> => {
+  if (searchTerm) {
+    const patients = await PatientModel.find({
+      $or: [
+        { identification: { $regex: searchTerm, $options: 'i' } },
+        { last_name: { $regex: searchTerm, $options: 'i' } },
+        { name: { $regex: searchTerm, $options: 'i' } },
+        { phone: { $regex: searchTerm, $options: 'i' } },
+      ],
+    })
+      .skip(Number(skip))
+      .limit(Number(limit));
+    return {
+      total: patients.length,
+      patients,
+    };
+  }
   const [total, patients] = await Promise.all([
     PatientModel.countDocuments(query),
     PatientModel.find(query).skip(Number(skip)).limit(Number(limit)),
   ]);
+
   return {
     total,
     patients,
@@ -48,9 +66,9 @@ const deletePatientByID = async (id: string) => {
 };
 
 export {
-  insertPatient,
+  deletePatientByID,
   getAllPatients,
   getPatientById,
+  insertPatient,
   updateIdPatient,
-  deletePatientByID,
 };
