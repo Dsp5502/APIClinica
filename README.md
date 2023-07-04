@@ -2,7 +2,37 @@
 
 La API es un proyecto desarrollado en Node.js con Express y TypeScript, diseñado como un conjunto de endpoints para realizar operaciones CRUD (crear, leer, actualizar y eliminar) relacionadas con pacientes, doctores y citas. Además, incluye funcionalidades como la creación de usuarios y autenticación, que valida el rol del usuario para acceder a los diferentes endpoints.
 
+Para almacenar y gestionar los datos de manera eficiente, se utiliza MongoDB como base de datos no relacional. La API se conecta a la base de datos utilizando Mongoose, una biblioteca de modelado de objetos de MongoDB para Node.js.
+
 Este proyecto fue creado específicamente para el curso de la Universidad Distrital y se encuentra bajo la iniciativa "Todos A la U". La API proporciona una interfaz eficiente y segura para interactuar con los datos relacionados con pacientes, doctores y citas, permitiendo a los usuarios realizar operaciones básicas de gestión.
+
+## Tecnologías empleadas
+
+El proyecto ha sido desarrollado utilizando las siguientes tecnologías:
+
+- Lenguaje: TypeScript
+- Plataforma: Node.js
+- Framework: Express
+
+### Bibliotecas utilizadas
+
+A lo largo del proyecto, se han utilizado varias bibliotecas para mejorar la funcionalidad y la eficiencia del código. A continuación, se detallan las bibliotecas utilizadas y una breve descripción de cada una:
+
+- **@types/express-validator:** Proporciona definiciones de tipos para el paquete express-validator, lo que facilita la validación de datos en Express.
+
+- **bcryptjs:** Una biblioteca que proporciona funciones para el cifrado y la comparación de contraseñas utilizando algoritmos de hash seguros. Se utiliza proteger contraseñas de usuario.
+
+- **cors:** Un middleware de Express que permite habilitar la comunicación entre diferentes dominios o servidores. Se utiliza para configurar políticas de control de acceso HTTP y gestionar las solicitudes de origen cruzado (CORS).
+
+- **dotenv:** Permite cargar variables de entorno desde un archivo .env. Se utiliza para separar la configuración sensible (como claves de API o información de conexión a bases de datos) del código fuente y mantenerlo seguro.
+
+- **express:** Un framework web rápido, minimalista y flexible para Node.js. Se utiliza para crear el servidor web y definir las rutas y los controladores para los endpoints de la API.
+
+- **express-validator:** Un middleware para Express que proporciona una forma sencilla de validar y sanitizar datos de entrada en las solicitudes HTTP.
+
+- **jsonwebtoken:** Una implementación de JSON Web Tokens (JWT) para Node.js. Se utiliza para la generación y verificación de tokens de autenticación, lo que permite una autenticación segura y basada en tokens.
+
+- **mongoose:** Una biblioteca de modelado de objetos de MongoDB para Node.js. Proporciona una interfaz sencilla y basada en esquemas para interactuar con la base de datos MongoDB.
 
 ## Desarrollador
 
