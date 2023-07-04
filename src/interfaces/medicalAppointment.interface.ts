@@ -3,6 +3,7 @@ export interface MedicalAppointment {
   specialtyId?: string;
   appointmentDate: Date;
   doctorId?: string;
+  patientId?: string;
   state: boolean;
 }
 

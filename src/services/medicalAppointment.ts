@@ -28,11 +28,19 @@ const getAllMedicalAppointments = async ({
       ],
     }).distinct('_id');
 
+    const patientsIds = await PatientModel.find({
+      $or: [
+        { name: { $regex: searchTerm, $options: 'i' } },
+        { last_name: { $regex: searchTerm, $options: 'i' } },
+      ],
+    }).distinct('_id');
+
     const appointments = await MedicalAppointmentsModel.find({
       $or: [
         { documentPatient: { $regex: searchTerm, $options: 'i' } },
         { specialtyId: { $in: specialtyIds } },
         { doctorId: { $in: doctorsIds } },
+        { patientId: { $in: patientsIds } },
       ],
     })
       .populate({

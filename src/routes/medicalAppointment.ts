@@ -37,6 +37,7 @@ router.post(
   [
     checkJwt,
     checkPermissions(['USER_ROLE']),
+    check('patientId', 'El paciente es obligatorio').not().isEmpty(),
     check('documentPatient', 'El numero de documento es obligatorio')
       .not()
       .isEmpty(),

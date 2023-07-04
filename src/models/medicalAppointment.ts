@@ -7,6 +7,11 @@ const MedicalAppointmentsSchema = new Schema<MedicalAppointment>(
       type: String,
       required: [true, 'El numero de documento es obligatorio'],
     },
+    patientId: {
+      type: Types.ObjectId,
+      ref: 'patients',
+      required: [true, 'El paciente es obligatorio'],
+    },
     specialtyId: {
       type: Types.ObjectId,
       ref: 'specialities',
