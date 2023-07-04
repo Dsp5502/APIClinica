@@ -79,3 +79,13 @@ Para ejecutar este proyecto, deberá añadir las siguientes variables de entorno
 ```
 
 5. **Acceder a la aplicación:** Abre tu navegador web y visita la dirección http://localhost:3002. Si todo ha sido configurado correctamente, deberías poder ver la aplicación en funcionamiento.
+
+
+# Capturas de Pantalla
+
+## Register User
+
+<img width="955" alt="image" src="https://github.com/Dsp5502/APIClinica/assets/90290626/b0597297-e917-47be-95aa-852f13462149">
+
+
+
