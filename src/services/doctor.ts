@@ -20,6 +20,7 @@ const getAllDoctors = async ({
     }).distinct('_id');
 
     const doctors = await DoctorModel.find({
+      ...query,
       $or: [
         { firstName: { $regex: searchTerm, $options: 'i' } },
         { lastName: { $regex: searchTerm, $options: 'i' } },

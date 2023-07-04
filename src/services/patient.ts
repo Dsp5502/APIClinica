@@ -18,6 +18,7 @@ const getAllPatients = async ({
 }: Pagination): Promise<PatientsResult> => {
   if (searchTerm) {
     const patients = await PatientModel.find({
+      ...query,
       $or: [
         { identification: { $regex: searchTerm, $options: 'i' } },
         { last_name: { $regex: searchTerm, $options: 'i' } },

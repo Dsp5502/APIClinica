@@ -34,8 +34,10 @@ const getAllMedicalAppointments = async ({
         { last_name: { $regex: searchTerm, $options: 'i' } },
       ],
     }).distinct('_id');
+    // AGREGAR LA QUERY
 
     const appointments = await MedicalAppointmentsModel.find({
+      ...query,
       $or: [
         { documentPatient: { $regex: searchTerm, $options: 'i' } },
         { specialtyId: { $in: specialtyIds } },
