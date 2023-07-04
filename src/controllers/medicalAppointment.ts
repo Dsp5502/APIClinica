@@ -27,12 +27,13 @@ const getMedicalAppointments = async (
   res: Response
 ): Promise<void> => {
   try {
-    const { limit = 5, skip = 0 } = req.query;
+    const { limit = 5, skip = 0, searchTerm = '' } = req.query;
     const query = { state: true };
     const result = await getAllMedicalAppointments({
       query,
       limit,
       skip,
+      searchTerm,
     } as Pagination);
     res.send(result);
   } catch (error) {
