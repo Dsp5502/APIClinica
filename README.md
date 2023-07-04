@@ -87,5 +87,25 @@ Para ejecutar este proyecto, deberá añadir las siguientes variables de entorno
 
 <img width="955" alt="image" src="https://github.com/Dsp5502/APIClinica/assets/90290626/b0597297-e917-47be-95aa-852f13462149">
 
+## Login User
+<img width="957" alt="image" src="https://github.com/Dsp5502/APIClinica/assets/90290626/d1609643-ad0b-4833-bb56-27028ad8d535">
+
+## Crear Paciente
+<img width="957" alt="image" src="https://github.com/Dsp5502/APIClinica/assets/90290626/54423c63-da10-47f5-82ec-62e4c427a544">
+
+## Editar Doctor
+<img width="960" alt="image" src="https://github.com/Dsp5502/APIClinica/assets/90290626/614d9b06-3c7e-49fb-ab4b-e64f8815fd89">
+
+## Obtener Especialidades
+<img width="959" alt="image" src="https://github.com/Dsp5502/APIClinica/assets/90290626/1ece5560-b44c-4466-a058-6ddb4c25dde1">
+
+## Obetner Citas medicas paginado
+<img width="959" alt="image" src="https://github.com/Dsp5502/APIClinica/assets/90290626/4cbdbda2-14e7-4cb3-8c82-402116398fb8">
+
+## Buscar por palabra
+<img width="957" alt="image" src="https://github.com/Dsp5502/APIClinica/assets/90290626/a6b6e381-dd24-4925-8e36-4e93a6064462">
+
+
+
 
 
