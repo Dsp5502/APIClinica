@@ -4,7 +4,7 @@ La API es un proyecto desarrollado en Node.js con Express y TypeScript, diseñad
 
 Para almacenar y gestionar los datos de manera eficiente, se utiliza MongoDB como base de datos no relacional. La API se conecta a la base de datos utilizando Mongoose, una biblioteca de modelado de objetos de MongoDB para Node.js.
 
-Este proyecto fue creado específicamente para el curso de la Universidad Distrital y se encuentra bajo la iniciativa "Todos A la U". La API proporciona una interfaz eficiente y segura para interactuar con los datos relacionados con pacientes, doctores y citas, permitiendo a los usuarios realizar operaciones básicas de gestión.
+Este proyecto fue creado específicamente para Protalento y se encuentra bajo la iniciativa DevF. La API proporciona una interfaz eficiente y segura para interactuar con los datos relacionados con pacientes, doctores y citas, permitiendo a los usuarios realizar operaciones básicas de gestión.
 
 ## Tecnologías empleadas
 
